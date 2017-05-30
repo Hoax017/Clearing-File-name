@@ -19,7 +19,7 @@
 						continue;
 					}
 
-					if (!preg_match("/.[avi|mkv]$/", $file)) continue;
+					if (!preg_match("/\.[avi|mkv]$/", $file)) continue;
 
 					if ($rename)
 					{
