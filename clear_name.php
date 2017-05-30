@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 	function my_getfiles($path, $rename = false)
 	{
@@ -37,75 +38,72 @@
 			echo "$path n'est pas un dossier";
 	}
 
-if ($argc >= 2 && is_dir($argv[1]))
-{
-	$root = $argv[1];
-	$list_files = array();
+if ($argc < 2 || !is_dir($argv[1])) $argv[1] = ".";
 
-	$blacklist = array(
-		"/\[.*\]/i",
-		"/20\d{2}/i",
-		"/truefrench/i",
-		"/showfr/i",
-		"/www/i",
-		"/torrent9/i",
-		"/notag/i",
-		"/french/i",
-		"/subforced/i",
-		"/HDRip/i",
-		"/aHDtv/i",
-		"/HDtv/i",
-		"/WEBRip/i",
-		"/UNRATED/i",
-		"/BaliBalo/i",
-		"/HuSh/i",
-		"/bdrip/i",
-		"/brrip/i",
-		"/dvdrip/i",
-		"/x264/i",
-		"/extreme/i",
-		"/xvid/i",
-		"/lost/i",
-		"/stvfrv/i",
-		"/RERip/i",
-		"/funkky/i",
-		"/svr/i",
-		"/UTT/i",
-		"/WEB/",
-		"/LD/",
-		"/T9/",
-		"/AMZN/",
-		"/DL/",
-		"/ZT/",
-		"/AC3/i",
-		"/LibertylanD/i",
-		"/multi/i",
-		"/sph/i",
-		"/LiBERTAD/i",
-		"/WaNeZt/i",
-		"/MD/",
-		"/ReBoT/",
-		"/NF/",
-		"/biz/i"
-	);
+$root = $argv[1];
+$list_files = array();
 
-	my_getfiles($root);
+$blacklist = array(
+	"/\[.*\]/i",
+	"/20\d{2}/i",
+	"/truefrench/i",
+	"/showfr/i",
+	"/www/i",
+	"/torrent9/i",
+	"/notag/i",
+	"/french/i",
+	"/subforced/i",
+	"/HDRip/i",
+	"/aHDtv/i",
+	"/HDtv/i",
+	"/WEBRip/i",
+	"/UNRATED/i",
+	"/BaliBalo/i",
+	"/HuSh/i",
+	"/bdrip/i",
+	"/brrip/i",
+	"/dvdrip/i",
+	"/x264/i",
+	"/extreme/i",
+	"/xvid/i",
+	"/lost/i",
+	"/stvfrv/i",
+	"/RERip/i",
+	"/funkky/i",
+	"/svr/i",
+	"/UTT/i",
+	"/WEB/",
+	"/LD/",
+	"/T9/",
+	"/AMZN/",
+	"/DL/",
+	"/ZT/",
+	"/AC3/i",
+	"/LibertylanD/i",
+	"/multi/i",
+	"/sph/i",
+	"/LiBERTAD/i",
+	"/WaNeZt/i",
+	"/MD/",
+	"/ReBoT/",
+	"/NF/",
+	"/biz/i"
+);
 
-	echo "\n\n=========================\n LIST OF FILES \n=========================\n\n";
+my_getfiles($root);
 
-	foreach ($list_files as $list_file) {
-		$path_parts = pathinfo($list_file[0].$list_file[1]);
-		$final_name = preg_replace($blacklist, "", $list_file[1]);
-		$final_name = str_replace(".", " ", $final_name);
-		$final_name = str_replace("-", " ", $final_name);
-		$final_name = str_replace(" {$path_parts['extension']}", "", $final_name);
-		$final_name = preg_replace("/[ \t\n\r]+/", " ", $final_name);
+echo "\n\n=========================\n LIST OF FILES \n=========================\n\n";
 
-		$final_name = trim($final_name);
-		printf("-> %70s => %40s\n", str_replace(".{$path_parts['extension']}", "", $list_file[1]), $final_name);
-		rename($list_file[0].$list_file[1], "{$list_file[0]}$final_name.{$path_parts['extension']}");
+foreach ($list_files as $list_file) {
+	$path_parts = pathinfo($list_file[0].$list_file[1]);
+	$final_name = preg_replace($blacklist, "", $list_file[1]);
+	$final_name = str_replace(".", " ", $final_name);
+	$final_name = str_replace("-", " ", $final_name);
+	$final_name = str_replace(" {$path_parts['extension']}", "", $final_name);
+	$final_name = preg_replace("/[ \t\n\r]+/", " ", $final_name);
 
-	}
+	$final_name = trim($final_name);
+	printf("-> %70s => %40s\n", str_replace(".{$path_parts['extension']}", "", $list_file[1]), $final_name);
+	rename($list_file[0].$list_file[1], "{$list_file[0]}$final_name.{$path_parts['extension']}");
+
 }
-else
-	echo "\nLe chemin est manquant\n\n";
