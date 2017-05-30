@@ -19,7 +19,7 @@
 						continue;
 					}
 
-					if (!preg_match("/\.[avi|mkv]$/", $file)) continue;
+					if (!preg_match("/[avi|mkv]$/", $file)) continue;
 
 					if ($rename)
 					{
@@ -38,10 +38,12 @@
 			echo "$path n'est pas un dossier";
 	}
 
-if ($argc < 2 || !is_dir($argv[1])) $argv[1] = ".";
+if ($argc < 2 || !is_dir($argv[1])) $argv[1] = "/";
 
 $root = $argv[1];
 $list_files = array();
+
+if ($root == "/") $root = "/home/amaitre/Vidéos/A tier";
 
 $blacklist = array(
 	"/\[.*\]/i",
