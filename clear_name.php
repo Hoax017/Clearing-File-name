@@ -3,23 +3,23 @@
 	{
 		global $list_files;
 		global $root;
-		$path .= '\\';
+		$path .= '/';
 
 		echo "\n\n=========================\nCHECKING : $path\n=========================\n\n";
 
 	   	if (is_dir($path)) {
 			if ($dh = opendir($path)) {
-				readdir($dh); // remove .
-				readdir($dh); // remove ..
 				while (($file = readdir($dh)) !== false) {
+					if ($file == "." || $file == "..") continue;
+					if(!preg_match("/.[avi|mkv]$/", $file)) continue;
 					if (filetype($path . $file) == "dir")
 						my_getfiles($path . $file, true);
 					else
 					{
 						if ($rename)
 						{
-							rename("$path$file", "$root\\$file");
-							$list_files[] = array($root.'\\', $file);
+							rename("$path$file", "$root/$file");
+							$list_files[] = array($root.'/', $file);
 							echo "-> Moved : $file\n";
 
 						}
@@ -48,6 +48,8 @@ if ($argc >= 2 && is_dir($argv[1]))
 		"/french/i",
 		"/subforced/i",
 		"/HDRip/i",
+		"/aHDtv/i",
+		"/HDtv/i",
 		"/WEBRip/i",
 		"/UNRATED/i",
 		"/BaliBalo/i",
@@ -65,6 +67,12 @@ if ($argc >= 2 && is_dir($argv[1]))
 		"/funkky/i",
 		"/svr/i",
 		"/UTT/i",
+		"/WEB/",
+		"/LD/",
+		"/T9/",
+		"/AMZN/",
+		"/DL/",
+		"/ZT/",
 		"/AC3/i"
 	);
 
