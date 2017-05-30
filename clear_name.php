@@ -86,7 +86,7 @@ if ($argc >= 2 && is_dir($argv[1]))
 		"/MD/",
 		"/ReBoT/",
 		"/NF/",
-		"/ biz/i"
+		"/biz/i"
 	);
 
 	my_getfiles($root);
