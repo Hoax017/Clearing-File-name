@@ -11,25 +11,30 @@
 			if ($dh = opendir($path)) {
 				while (($file = readdir($dh)) !== false) {
 					if ($file == "." || $file == "..") continue;
-					if(!preg_match("/.[avi|mkv]$/", $file)) continue;
-					if (filetype($path . $file) == "dir")
-						my_getfiles($path . $file, true);
-					else
-					{
-						if ($rename)
-						{
-							rename("$path$file", "$root/$file");
-							$list_files[] = array($root.'/', $file);
-							echo "-> Moved : $file\n";
 
-						}
-						else
-							$list_files[] = array($path, $file);
+					if (filetype($path . $file) == "dir")
+					{
+						my_getfiles($path . $file, true);
+						continue;
 					}
+
+					if (!preg_match("/.[avi|mkv]$/", $file)) continue;
+
+					if ($rename)
+					{
+						rename("$path$file", "$root/$file");
+						$list_files[] = array($root.'/', $file);
+						echo "-> Moved : $file\n";
+
+					}
+					else
+						$list_files[] = array($path, $file);
 				}
 				closedir($dh);
 			}
 		}
+		else
+			echo "$path n'est pas un dossier";
 	}
 
 if ($argc >= 2 && is_dir($argv[1]))
@@ -59,7 +64,6 @@ if ($argc >= 2 && is_dir($argv[1]))
 		"/dvdrip/i",
 		"/x264/i",
 		"/extreme/i",
-		"/ biz/i",
 		"/xvid/i",
 		"/lost/i",
 		"/stvfrv/i",
@@ -73,7 +77,16 @@ if ($argc >= 2 && is_dir($argv[1]))
 		"/AMZN/",
 		"/DL/",
 		"/ZT/",
-		"/AC3/i"
+		"/AC3/i",
+		"/LibertylanD/i",
+		"/multi/i",
+		"/sph/i",
+		"/LiBERTAD/i",
+		"/WaNeZt/i",
+		"/MD/",
+		"/ReBoT/",
+		"/NF/",
+		"/ biz/i"
 	);
 
 	my_getfiles($root);
