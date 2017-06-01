@@ -61,6 +61,7 @@ $blacklist = array(
 	"/WEBRip/i",
 	"/UNRATED/i",
 	"/BaliBalo/i",
+	"/PRiDEHD/i",
 	"/HuSh/i",
 	"/bdrip/i",
 	"/brrip/i",
