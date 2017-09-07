@@ -1,11 +1,20 @@
 # File-name-Cleaner
+
+THIS TOOL USE PHP
+
 ## launch
 ```bash
-php clear_name.php <directory>
+./clearfilename <directory>
 ```
 EXEMPLE :
 ```bash
-php  .\clear_name.php G:\Film
+./clearfilename G:\Film
+```
+If no directory selected it select directory form config.json
+```JSON
+{
+    "default_folder": "\/home\/Hoax017\/Download"
+}
 ```
 
 <img src="https://raw.githubusercontent.com/Hoax017/Clearing-File-name/master/ScreenShot.png">

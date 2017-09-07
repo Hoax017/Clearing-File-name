@@ -1,0 +1,2 @@
+#!/bin/sh
+php clear_name.php "$1"

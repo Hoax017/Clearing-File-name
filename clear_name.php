@@ -38,62 +38,16 @@
 			echo "$path n'est pas un dossier";
 	}
 
-if ($argc < 2 || !is_dir($argv[1])) $argv[1] = "/";
+$config = json_decode(file_get_contents(__DIR__."/config.json"));
+
+if ($argc < 2 || !is_dir($argv[1]))
+	$argv[1] = $config["default_folder"];
 
 $root = $argv[1];
 $list_files = array();
 
-if ($root == "/") $root = "/home/amaitre/Vidéos/A tier";
+$blacklist = $config["blacklist"];
 
-$blacklist = array(
-	"/\[.*\]/i",
-	"/20\d{2}/i",
-	"/truefrench/i",
-	"/showfr/i",
-	"/www/i",
-	"/torrent9/i",
-	"/notag/i",
-	"/french/i",
-	"/subforced/i",
-	"/HDRip/i",
-	"/aHDtv/i",
-	"/HDtv/i",
-	"/WEBRip/i",
-	"/UNRATED/i",
-	"/BaliBalo/i",
-	"/PRiDEHD/i",
-	"/destroy/i",
-	"/HuSh/i",
-	"/bdrip/i",
-	"/brrip/i",
-	"/dvdrip/i",
-	"/x264/i",
-	"/extreme/i",
-	"/xvid/i",
-	"/lost/i",
-	"/stvfrv/i",
-	"/RERip/i",
-	"/funkky/i",
-	"/svr/i",
-	"/UTT/i",
-	"/WEB/",
-	"/LD/",
-	"/T9/",
-	"/AMZN/",
-	"/DL/",
-	"/ZT/",
-	"/AC3/i",
-	"/LibertylanD/i",
-	"/multi/i",
-	"/sph/i",
-	"/LiBERTAD/i",
-	"/WaNeZt/i",
-	"/AiXiAS/i",
-	"/MD/",
-	"/ReBoT/",
-	"/NF/",
-	"/biz/i"
-);
 
 my_getfiles($root);
 
