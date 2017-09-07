@@ -5,6 +5,7 @@
         "\/20\\d{2}\/i",
         "\/xvid\\-[a-z0-9]+\/i",
         "\/cpasbien\\.io\/i",
+        "\/READNFO\/i",
         "\/truefrench\/i",
         "\/showfr\/i",
         "\/www\/i",
