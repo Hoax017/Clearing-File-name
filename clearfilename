@@ -6,5 +6,11 @@ then
 		./sort_series.php "$2"
 		exit
 	fi
+	if [ $1 = "-clear" ]
+	then
+		./clear_name.php "$2"
+		exit
+	fi
 fi
 ./clear_name.php "$1"
+./sort_series.php "$1"

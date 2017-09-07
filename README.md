@@ -4,11 +4,11 @@ THIS TOOL USE PHP
 
 ## Launch clear name file
 ```bash
-./clearfilename <directory>
+./clearfilename -clear <directory>
 ```
 EXEMPLE :
 ```bash
-./clearfilename G:\Film
+./clearfilename -clear G:\Film
 ```
 ## Launch Sort Showtime on folders
 ```bash
@@ -17,6 +17,10 @@ EXEMPLE :
 ### EXEMPLE :
 ```bash
 ./clearfilename -sort /home/Hoax017/Download
+```
+## Launch Sort AND Clear name
+```bash
+./clearfilename <directory>
 ```
 ### Result:
 ```bash
