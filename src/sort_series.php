@@ -1,6 +1,6 @@
 #!/usr/bin/php
 <?php
-$config = json_decode(file_get_contents(__DIR__."../config.json"));
+$config = json_decode(file_get_contents(__DIR__."/../config.json"));
 
 
 if ($argc < 2 || empty($argv[1]) || !is_dir($argv[1])) {
