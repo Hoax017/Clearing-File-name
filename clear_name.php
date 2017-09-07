@@ -41,12 +41,12 @@
 $config = json_decode(file_get_contents(__DIR__."/config.json"));
 
 if ($argc < 2 || !is_dir($argv[1]))
-	$argv[1] = $config["default_folder"];
+	$argv[1] = $config->default_folder;
 
 $root = $argv[1];
 $list_files = array();
 
-$blacklist = $config["blacklist"];
+$blacklist = $config->blacklist;
 
 
 my_getfiles($root);
