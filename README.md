@@ -2,30 +2,37 @@
 
 THIS TOOL USE PHP
 
+## Install linus
+```bash
+cd /opt
+sudo git clone https://github.com/Hoax017/Clearing-File-name.git Clearing-File-name
+echo "export PATH=/opt/Clearing-File-name/:\$PATH" >> ~/.zshrc
+source ~/.zshrc
+```
 ## Launch clear name file
 ```bash
-./clearfilename -clear <directory>
+clearfilename -clear <directory>
 ```
 EXEMPLE :
 ```bash
-./clearfilename -clear G:\Film
+clearfilename -clear G:\Film
 ```
 ## Launch Sort Showtime on folders
 ```bash
-./clearfilename -sort <directory>
+clearfilename -sort <directory>
 ```
 ### EXEMPLE :
 ```bash
-./clearfilename -sort /home/Hoax017/Download
+clearfilename -sort /home/Hoax017/Download
 ```
 ## Launch Sort AND Clear name
 ```bash
-./clearfilename <directory>
+clearfilename <directory>
 ```
 ### Result:
 ```bash
 ╭─~/Clearing-File-name master✹ ◒  1h40m
-╰─▶ ./clearfilename -sort /home/amaitre/Vidéos/A\ trier/
+╰─▶ clearfilename -sort /home/amaitre/Vidéos/A\ trier/
                        Gotham S01E11.avi ->             Gotham/S01/Gotham S01E11.avi
                        Gotham S01E12.avi ->             Gotham/S01/Gotham S01E12.avi
                     Supergirl S02E01.avi ->       Supergirl/S02/Supergirl S02E01.avi
