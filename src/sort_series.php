@@ -17,14 +17,14 @@ if (is_dir($path)) {
         while (($file = readdir($dh)) !== false) {
             if ($file == "."
                 || $file == ".."
-                || !preg_match("/(S\d{2})E\d{2}/", $file, $match)
+                || !preg_match("/(S\d{2})E\d{2}/i", $file, $match)
             ) {
                 continue;
             }
 
             $path_parts = pathinfo($file);
             $serie_name = str_replace($match[0], "", $path_parts["filename"]);
-            $serie_name = preg_replace("/\s*\-?\s*final$/i", "", $serie_name);
+            $serie_name = preg_replace("/\s*\-?\s*final(\s*\d+p)?$/i", "$1", $serie_name);
             $serie_name = preg_replace("/\d+p/i", "", $serie_name);
             $serie_name = preg_replace("/vostfr/i", "", $serie_name);
             $serie_name = trim($serie_name);

@@ -30,7 +30,7 @@ function My_getfiles($path, $move = false)
                     continue;
                 }
 
-                if (!preg_match("/[avi|mkv]$/", $file)) {
+                if (!preg_match("/[avi|mkv|mp4]$/", $file)) {
                     continue;
                 }
 
@@ -73,6 +73,11 @@ foreach ($list_files as $list_file) {
     $final_name = str_replace("-", " ", $final_name);
     $final_name = str_replace(" {$path_parts['extension']}", "", $final_name);
     $final_name = preg_replace("/[ \t\n\r]+/", " ", $final_name);
+    $final_name = ucwords(strtolower($final_name));
+
+    if (preg_match("/(S\d{2}E\d{2})/i", $final_name, $match)) {
+        $final_name = str_replace($match[1], strtoupper($match[1]), $final_name);
+    }
 
     $final_name = trim($final_name);
     printf(
