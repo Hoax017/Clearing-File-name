@@ -29,6 +29,14 @@ clearfilename -sort /home/Hoax017/Download
 ```bash
 clearfilename <directory>
 ```
+## Config
+If no directory selected it select directory form /opt/Clearing-File-name/config.json
+```JSON
+{
+    "default_folder": "\/home\/Hoax017\/Download"
+}
+```
+
 ### Result:
 ```bash
 ╭─~/Clearing-File-name master✹ ◒  1h40m
@@ -96,12 +104,4 @@ total 717560
 -rw-r--r-- 1 amaitre users 367487962  7 sept. 12:59 'Supergirl S02E01.avi'
 -rw-r--r-- 1 amaitre users 367253330  7 sept. 13:08 'Supergirl S02E02.avi'
 ```
-## Config
-If no directory selected it select directory form config.json
-```JSON
-{
-    "default_folder": "\/home\/Hoax017\/Download"
-}
-```
-
 <img src="https://raw.githubusercontent.com/Hoax017/Clearing-File-name/master/ScreenShot.png">
