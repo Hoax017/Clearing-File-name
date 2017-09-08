@@ -30,7 +30,7 @@ function My_getfiles($path, $move = false)
                     continue;
                 }
 
-                if (!preg_match("/[avi|mkv|mp4]$/", $file)) {
+                if (!preg_match("/(.(avi|mkv|mp4))$/", $file)) {
                     continue;
                 }
 
@@ -41,6 +41,7 @@ function My_getfiles($path, $move = false)
 
                 } else {
                     $list_files[] = array($path, $file);
+                    echo "$file";
                 }
             }
             closedir($dh);
