@@ -74,6 +74,9 @@ foreach ($list_files as $list_file) {
     $final_name = str_replace("-", " ", $final_name);
     $final_name = str_replace(" {$path_parts['extension']}", "", $final_name);
     $final_name = preg_replace("/[ \t\n\r]+/", " ", $final_name);
+    if (preg_match("/(.+)\s+(\d{1,2})x(\d{1,2})/i", $final_name, $match)) {
+        $final_name = sprintf("%s S%02dE%02d", $match[1], intval($match[2]), intval($match[3]));
+    }
     $final_name = ucwords(strtolower($final_name));
 
     if (preg_match("/(S\d{2}E\d{2})/i", $final_name, $match)) {
