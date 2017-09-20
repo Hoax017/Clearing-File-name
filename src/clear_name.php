@@ -41,7 +41,7 @@ function My_getfiles($path, $move = false)
 
                 } else {
                     $list_files[] = array($path, $file);
-                    echo "$file";
+                    echo "$file\n";
                 }
             }
             closedir($dh);
