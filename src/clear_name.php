@@ -74,11 +74,16 @@ foreach ($list_files as $list_file) {
     $final_name = str_replace("-", " ", $final_name);
     $final_name = str_replace(" {$path_parts['extension']}", "", $final_name);
     $final_name = preg_replace("/[ \t\n\r]+/", " ", $final_name);
-    if (preg_match("/(.+)\s+(\d{1,2})x(\d{1,2})/i", $final_name, $match)) {
-        $final_name = sprintf("%s S%02dE%02d", $match[1], intval($match[2]), intval($match[3]));
+
+    // 1X4 to S01E04
+    if (preg_match("/(.+)\s+(\d{1,2})x(\d{1,2})(.*)/i", $final_name, $match)) {
+        $final_name = sprintf("%s S%02dE%02d%s", $match[1], intval($match[2]), intval($match[3]), $match[4]);
     }
+
+    // TiTLe to Title
     $final_name = ucwords(strtolower($final_name));
 
+    // s02e25 to S02E25
     if (preg_match("/(S\d{2}E\d{2})/i", $final_name, $match)) {
         $final_name = str_replace($match[1], strtoupper($match[1]), $final_name);
     }
