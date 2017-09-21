@@ -17,13 +17,13 @@ if (is_dir($path)) {
         while (($file = readdir($dh)) !== false) {
             if ($file == "."
                 || $file == ".."
-                || !preg_match("/(S\d{2})E\d{2}/i", $file, $match)
+                || !preg_match("/(.*)(S\d{2})E\d{2}/i", $file, $match)
             ) {
                 continue;
             }
 
             $path_parts = pathinfo($file);
-            $serie_name = str_replace($match[0], "", $path_parts["filename"]);
+            $serie_name = $match[1];
             $serie_name = preg_replace("/\s*\-?\s*final(\s*\d+p)?$/i", "$1", $serie_name);
             $serie_name = preg_replace("/\d+p/i", "", $serie_name);
             $serie_name = preg_replace("/vostfr/i", "", $serie_name);
@@ -31,11 +31,11 @@ if (is_dir($path)) {
             if (!is_dir("$path/$serie_name")) {
                 mkdir("$path/$serie_name");
             }
-            if (!is_dir("$path/$serie_name/{$match[1]}")) {
-                mkdir("$path/$serie_name/{$match[1]}");
+            if (!is_dir("$path/$serie_name/{$match[2]}")) {
+                mkdir("$path/$serie_name/{$match[2]}");
             }
-            rename("$path/$file", "$path/$serie_name/{$match[1]}/$file");
-            printf("%40s -> %40s\n", $file, "$serie_name/{$match[1]}/$file");
+            rename("$path/$file", "$path/$serie_name/{$match[2]}/$file");
+            printf("%40s -> %40s\n", $file, "$serie_name/{$match[2]}/$file");
         }
     }
 }
