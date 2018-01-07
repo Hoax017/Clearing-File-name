@@ -1,5 +1,5 @@
 {
-    "default_folder": "\/home\/amaitre\/Vid\u00e9os\/A trier",
+    "default_folder": "\/home\/amaitre\/Kangourou\/Videos\/A trier",
     "match": "\/(.(avi|mkv|mp4))$\/",
     "blacklist": [
         "\/\\[.*\\]\/i",
@@ -8,8 +8,11 @@
         "\/cpasbien\\.io\/i",
         "\/READNFO\/i",
         "\/truefrench\/i",
+        "\/iNTERNAL\/",
         "\/showfr\/i",
         "\/www\/i",
+        "\/PDTV\/i",
+        "\/boromir\/i",
         "\/amb3r\/i",
         "\/torrent9\\.[a-z]{2,2}\/i",
         "\/torrent9\/i",
@@ -35,6 +38,7 @@
         "\/Cpasbien\/i",
         "\/pw\/i",
         "\/ws\/i",
+        "\/SRIZ\/i",
         "\/xvid\/i",
         "\/Shanks\/i",
         "\/stvfrv\/i",
@@ -43,7 +47,7 @@
         "\/svr\/i",
         "\/UTT\/i",
         "\/WEB\/",
-        "\/LD\/",
+        "\/LD\/i",
         "\/T9\/",
         "\/ViVi\/",
         "\/ACOOL\/i",
@@ -73,7 +77,10 @@
         "\/biz\/i"
     ],
     "blacklist_file": [
+        "Series TV.html",
+        "Torrent9.html",
         "Torrents9.html",
+        "Musique MP3.html",
         "Bluray 720p - 1080p.html",
         "Albums MP3.html"
     ]
