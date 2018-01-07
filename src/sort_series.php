@@ -18,6 +18,7 @@ if (is_dir($path)) {
             if ($file == "."
                 || $file == ".."
                 || !preg_match("/(.*)(S\d{2})E\d{2}/i", $file, $match)
+                || is_dir($file)
             ) {
                 continue;
             }
