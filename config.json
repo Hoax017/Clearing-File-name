@@ -1,5 +1,6 @@
 {
     "default_folder": "\/home\/amaitre\/Vid\u00e9os\/A trier",
+    "match": "\/(.(avi|mkv|mp4))$\/",
     "blacklist": [
         "\/\\[.*\\]\/i",
         "\/20\\d{2}\/i",
@@ -10,7 +11,7 @@
         "\/showfr\/i",
         "\/www\/i",
         "\/amb3r\/i",
-        "\/torrent9\\.tv\/i",
+        "\/torrent9\\.[a-z]{2,2}\/i",
         "\/torrent9\/i",
         "\/notag\/i",
         "\/french\/i",
@@ -70,5 +71,10 @@
         "\/NF\/",
         "\/\\(\\)\/",
         "\/biz\/i"
+    ],
+    "blacklist_file": [
+        "Torrents9.html",
+        "Bluray 720p - 1080p.html",
+        "Albums MP3.html"
     ]
 }
