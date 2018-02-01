@@ -1,11 +1,12 @@
 {
-    "default_folder": "\/mnt\/c\/Users\/wiilo\/Downloads",
+    "default_folder": "\/mnt\/c\/Users\/wiilo\/Downloads\/A Trier",
     "match": "\/(.(avi|mkv|mp4))$\/",
     "blacklist": [
         "\/\\[.*\\]\/i",
         "\/20\\d{2}\/i",
         "\/xvid\\-[a-z0-9]+\/i",
         "\/cpasbien\\.io\/i",
+	"\/fwd\/i",
         "\/READNFO\/i",
         "\/truefrench\/i",
         "\/iNTERNAL\/",
@@ -80,9 +81,11 @@
 	"Bluray FRENCH - MULTI.html",
         "Series TV.html",
         "Torrent9.html",
+	"Films TORRENT.html",
         "Torrents9.html",
         "Musique MP3.html",
         "Bluray 720p - 1080p.html",
-        "Albums MP3.html"
+        "Albums MP3.html",
+	".+\\.nfo$"
     ]
 }
