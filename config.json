@@ -6,6 +6,7 @@
         "\/20\\d{2}\/i",
         "\/xvid\\-[a-z0-9]+\/i",
         "\/cpasbien\\.io\/i",
+	"\/fwd\/i",
         "\/READNFO\/i",
         "\/truefrench\/i",
         "\/iNTERNAL\/",
@@ -83,6 +84,7 @@
         "Torrents9.html",
         "Musique MP3.html",
         "Bluray 720p - 1080p.html",
-        "Albums MP3.html"
+        "Albums MP3.html",
+	".+\\.nfo$"
     ]
 }
