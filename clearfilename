@@ -4,13 +4,16 @@ then
 	if [ $1 = "-sort" ]
 	then
 		/opt/Clearing-File-name/src/sort_series.php "$2"
+		sleep 10
 		exit
 	fi
 	if [ $1 = "-clear" ]
 	then
 		/opt/Clearing-File-name/src/clear_name.php "$2"
+		sleep 10
 		exit
 	fi
 fi
 /opt/Clearing-File-name/src/clear_name.php "$1"
 /opt/Clearing-File-name/src/sort_series.php "$1"
+sleep 10

@@ -61,7 +61,9 @@ function My_getfiles($path, $move = false)
 }
 
 $config = json_decode(file_get_contents(__DIR__."/../config.json"));
-
+if (empty($config)) {
+	die("Config error");
+}
 if ($argc < 2 || empty($argv[1]) || !is_dir($argv[1])) {
 	$argv[1] = $config->default_folder;
 }

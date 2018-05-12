@@ -81,10 +81,17 @@
 		"\/biz\/i"
 	],
 	"blacklist_file": [
+		"Films DVDRIP exclus.html",
 		"Bluray FRENCH - MULTI.html",
+		"Films et Series.html",
+		"www.torrent9.biz.html",
 		"Series TV.html",
+		"Toutes les Series.html",
+		"Tout derniers TORRENTS.*.html",
 		"Torrent9.html",
 		"Films TORRENT.html",
+		"720p - 1080p.html",
+		"Torrent MP3.html",
 		"Torrents9.html",
 		"EXCLUS Films.html",
 		"Jeux PC Torrent.html",
