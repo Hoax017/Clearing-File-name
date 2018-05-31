@@ -8,7 +8,7 @@ THIS TOOL USE PHP
 ```bash
 cd /opt
 sudo git clone https://github.com/hoax017/Clearing-File-name.git Clearing-File-name
-sudo cp /opt/Clearing-File-name/clearfilename /usr/bin/clearfilename
+sudo ln -s /opt/Clearing-File-name/clearfilename /usr/bin/clearfilename
 ```
 ## Launch clear name file
 ```bash

@@ -3,17 +3,16 @@ if [ $# -ge 1 ]
 then
 	if [ $1 = "-sort" ]
 	then
-		/opt/Clearing-File-name/src/sort_series.php "$2"
-		sleep 10
-		exit
-	fi
-	if [ $1 = "-clear" ]
+		/opt/Clearing-File-name/src/sort_series.php "$2";
+	elif [ $1 = "-clear" ]
 	then
-		/opt/Clearing-File-name/src/clear_name.php "$2"
-		sleep 10
-		exit
+		/opt/Clearing-File-name/src/clear_name.php "$2";
+	else
+		echo "use: clearfilename [-sort|-clear] [path]"
 	fi
+else
+	/opt/Clearing-File-name/src/clear_name.php "$1";
+	/opt/Clearing-File-name/src/sort_series.php "$1";
 fi
-/opt/Clearing-File-name/src/clear_name.php "$1"
-/opt/Clearing-File-name/src/sort_series.php "$1"
-sleep 10
+echo "Press enter to close"
+read end
