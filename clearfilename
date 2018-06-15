@@ -1,15 +1,13 @@
 #!/bin/bash
-if [ $# -ge 1 ]
+if [ $1 = "-help" ]
 then
-	if [ $1 = "-sort" ]
-	then
-		/opt/Clearing-File-name/src/sort_series.php "$2";
-	elif [ $1 = "-clear" ]
-	then
-		/opt/Clearing-File-name/src/clear_name.php "$2";
-	else
-		echo "use: clearfilename [-sort|-clear] [path]"
-	fi
+	echo "use: [-help|-sort|-clear] [path=default_config]"
+elif [ $1 = "-sort" ]
+then
+	/opt/Clearing-File-name/src/sort_series.php "$2";
+elif [ $1 = "-clear" ]
+then
+	/opt/Clearing-File-name/src/clear_name.php "$2";
 else
 	/opt/Clearing-File-name/src/clear_name.php "$1";
 	/opt/Clearing-File-name/src/sort_series.php "$1";
