@@ -1,5 +1,5 @@
 {
-	"default_folder": "\/mnt\/k\/A Trier",
+	"default_folder": "\/mnt\/k\/Videos",
 	"match": "\/(.(avi|mkv|mp4|srt))$\/",
 	"blacklist": [
 		"\/\\[.*\\]\/i",
@@ -20,6 +20,7 @@
 		"\/torrent9\/i",
 		"\/notag\/i",
 		"\/french\/i",
+		"\/blueray\/i",
 		"\/Zone.Telechargement\/i",
 		"\/subforced\/i",
 		"\/HDRip\/i",
@@ -51,6 +52,7 @@
 		"\/funkky\/i",
 		"\/svr\/i",
 		"\/UTT\/i",
+		"\/WEBR\/",
 		"\/WEB\/",
 		"\/LD\/",
 		"\/T9\/",
@@ -88,6 +90,7 @@
 	],
 	"blacklist_file": [
 		".+\\.nfo$",
-		".+\\.html$"
+		".+\\.html$",
+		"Torrent9.png"
 	]
 }

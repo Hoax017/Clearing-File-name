@@ -21,7 +21,7 @@ if (is_dir($path)) {
 				|| $file == ".."
 				|| is_dir($file)
 				|| !preg_match($config->match, $file)
-				|| !preg_match("/(.*)(S\d{2})E\d{2}/i", $file, $match)
+				|| !preg_match("/(.*)(S\d+)E\d+/i", $file, $match)
 			) {
 				continue;
 			}
